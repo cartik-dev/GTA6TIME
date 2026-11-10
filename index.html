@@ -1,153 +1,64 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#17112d">
-<title>GTA VI — Vice City Countdown</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
-:root{color-scheme:dark;--pink:#ff4fa3;--cyan:#55eaff;--gold:#ffd36a}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,Arial,sans-serif;background:#100d22;color:#fff}
-body{overflow-x:hidden}.scene{position:fixed;inset:0;z-index:0;overflow:hidden;background:linear-gradient(#211743 0%,#63346f 37%,#f18a82 68%,#f8b77e 100%);transition:background 5s ease}
-.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,9,28,.62),transparent 35%,transparent 65%,rgba(13,9,28,.45)),linear-gradient(0deg,rgba(10,8,24,.94),transparent 62%);pointer-events:none}
-#city{position:absolute;inset:auto 0 0;width:100%;height:100%;min-height:540px}
-.sun{position:absolute;width:clamp(130px,19vw,250px);aspect-ratio:1;border-radius:50%;left:68%;top:17%;transform:translateX(-50%);background:linear-gradient(145deg,#fff2a6,#ff9b8c 75%);box-shadow:0 0 55px #ffb08b,0 0 130px #ff70a5;transition:top 6s ease,opacity 4s ease}
-.sun:after{content:"";position:absolute;inset:55% -3% 0;background:repeating-linear-gradient(0deg,transparent 0 9px,rgba(80,35,80,.25) 10px 14px)}
-body.launched .scene{background:linear-gradient(#090e2c 0%,#28234d 44%,#5a315e 72%,#ed796f 100%)}
-body.launched .sun{top:64%;opacity:.82}
-body.launched .scene:after{background:linear-gradient(90deg,rgba(7,7,23,.48),transparent 35%,transparent 65%,rgba(7,7,23,.35)),linear-gradient(0deg,rgba(8,7,20,.96),transparent 66%)}
-main{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(28px,6vh,64px) 18px 190px}
-.eyebrow{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#ffc2df;font-weight:800;text-shadow:0 2px 12px #21102e}
-h1{font-family:'Barlow Condensed',Impact,sans-serif;font-size:clamp(64px,12vw,148px);line-height:.78;letter-spacing:-.035em;margin:20px 0 12px;text-transform:uppercase;font-weight:900;background:linear-gradient(180deg,#fff 8%,#ffb6db 48%,#ff5eaa 75%,#9e54bd);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 5px 0 rgba(42,12,57,.55)) drop-shadow(0 0 25px rgba(255,73,168,.4))}
-.subtitle{font-family:'Barlow Condensed',sans-serif;font-size:clamp(18px,3vw,28px);letter-spacing:.25em;text-transform:uppercase;color:#fff;text-shadow:0 2px 12px #311c4a}
-.panel{margin-top:clamp(30px,7vh,68px);width:min(820px,100%);padding:clamp(22px,4vw,38px);border:1px solid rgba(255,255,255,.22);background:linear-gradient(135deg,rgba(25,17,51,.75),rgba(58,24,67,.48));backdrop-filter:blur(16px);border-radius:5px;box-shadow:0 22px 80px rgba(5,4,20,.3),inset 0 1px rgba(255,255,255,.14)}
-.panel-label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#ffc3dc;font-weight:800}
-.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
-.unit{padding:15px 8px 12px;border-right:1px solid rgba(255,255,255,.16)}.unit:last-child{border:0}
-.num{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,8vw,78px);font-weight:800;line-height:1;color:#fff;text-shadow:0 0 20px rgba(85,234,255,.45);font-variant-numeric:tabular-nums}
-.unit span{display:block;margin-top:8px;font-size:10px;letter-spacing:.22em;color:#9eefff;text-transform:uppercase;font-weight:700}
-.date{margin-top:24px;color:#ffe0ef;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
-.status{margin-top:24px;display:inline-flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#a8f8ff}
-.dot{width:7px;height:7px;border-radius:50%;background:#67f4e5;box-shadow:0 0 12px #67f4e5;animation:pulse 1.4s infinite}
-@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
-.footer{position:absolute;bottom:24px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.58);text-transform:uppercase}
-#fireworks{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;transition:opacity 2s}
-body.launched #fireworks{opacity:1}
-.launched-message{display:none;margin-top:22px;font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,6vw,64px);line-height:1;text-transform:uppercase;color:#fff2ae;text-shadow:0 0 24px #ff9e69}
-body.launched .launched-message{display:block}
-body.launched .countdown{display:none}
-@media(max-width:520px){main{padding-top:48px}.countdown{gap:2px}.unit{padding:12px 2px}.num{font-size:48px}.unit span{font-size:8px;letter-spacing:.12em}.panel{padding:22px 12px}.sun{left:72%;top:24%}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17112d">
+  <meta name="description" content="Обратный отсчёт до выхода Grand Theft Auto VI в атмосфере Vice City.">
+  <title>GTA VI — Vice City Countdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-<div class="scene" aria-hidden="true">
- <div class="sun"></div>
- <svg id="city" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <linearGradient id="road" x2="0" y2="1"><stop stop-color="#30243f"/><stop offset="1" stop-color="#090b1c"/></linearGradient>
-  <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#342d62"/><stop offset="1" stop-color="#171a38"/></linearGradient>
-  <linearGradient id="neon" x2="0" y2="1"><stop stop-color="#ff9bc9"/><stop offset="1" stop-color="#ff4fa3"/></linearGradient>
- </defs>
- <!-- distant skyline -->
- <g fill="#292044" opacity=".82">
-  <path d="M0 390h90v-110h40v65h28v-90h45v135h55v-75h40v-50h32v125h65v-150h52v150h44v-80h28v-40h38v120h65v-175h55v175h44v-105h35v105h50v-135h55v135h42v-75h35v-35h45v110h54v-150h50v150h55v-100h42v100h55v-130h44v130h70v370H0z"/>
- </g>
- <!-- signature hotel towers -->
- <g>
-  <path d="M135 530V280l18-36 18 36v250z" fill="#22264b" stroke="#ff7db9" stroke-width="2"/>
-  <path d="M145 292h16M145 318h16M145 344h16M145 370h16M145 396h16M145 422h16M145 448h16" stroke="#7cecff" stroke-width="4"/>
-  <path d="M1030 540V210h105v330z" fill="url(#glass)" stroke="#ff7db9" stroke-width="2"/>
-  <path d="M1044 230h77M1044 260h77M1044 290h77M1044 320h77M1044 350h77M1044 380h77M1044 410h77M1044 440h77M1044 470h77" stroke="#74e9ff" stroke-width="3" opacity=".8"/>
-  <path d="M1020 210h125l-14-20h-97z" fill="#ff68a9"/>
-  <path d="M1170 540V320h70v220z" fill="#202344" stroke="#65eaff"/>
-  <path d="M1180 340h50M1180 370h50M1180 400h50M1180 430h50M1180 460h50" stroke="#ff8bbd" stroke-width="4"/>
- </g>
- <!-- neon sign -->
- <g transform="translate(560 290)">
-  <path d="M0 0h300v86H0z" fill="#1a1734" stroke="#ff69b2" stroke-width="3"/>
-  <text x="150" y="57" text-anchor="middle" font-family="Arial,sans-serif" font-size="42" font-weight="900" letter-spacing="7" fill="#fff" stroke="#ff4fa3" stroke-width="1">VICE CITY</text>
-  <path d="M18 92h264" stroke="#62eaff" stroke-width="3"/>
- </g>
- <!-- waterfront -->
- <path d="M0 525q250-25 500 0t500 0 440 0v235H0z" fill="#252344" opacity=".8"/>
- <path d="M0 585q280-18 520 0t480 0 440 0" fill="none" stroke="#ff8ebd" stroke-width="3" opacity=".5"/>
- <!-- road -->
- <path d="M0 625L1440 595v165H0z" fill="url(#road)"/>
- <path d="M0 690l1440-28" stroke="#ffd36a" stroke-width="3" stroke-dasharray="52 36" opacity=".65"/>
- <!-- palm trees -->
- <g fill="none" stroke-linecap="round">
-  <path d="M310 630q-12-150 5-235" stroke="#38243c" stroke-width="13"/>
-  <path d="M315 395q-70-48-116-12 65-6 111 26M315 395q-35-80-92-77 54 26 92 92M315 395q5-90 62-111-35 51-54 119M315 395q65-54 115-25-68-1-109 38M315 395q42 18 58 73-44-40-66-62" stroke="#192c3b" stroke-width="13"/>
-  <path d="M1300 640q-8-140 10-220" stroke="#38243c" stroke-width="13"/>
-  <path d="M1310 420q-70-48-116-12 65-6 111 26M1310 420q-35-80-92-77 54 26 92 92M1310 420q5-90 62-111-35 51-54 119M1310 420q65-54 115-25-68-1-109 38M1310 420q42 18 58 73-44-40-66-62" stroke="#192c3b" stroke-width="13"/>
- </g>
- <!-- animated cars -->
- <g id="carA">
-  <g transform="translate(-250 0)">
-   <path d="M0 650l22-28 66-8 34 28 18 8v24H0z" fill="#ff4f9d" stroke="#ffd2e5" stroke-width="2"/>
-   <path d="M36 624l15-20h37l22 20z" fill="#75dff1" stroke="#ffe2ef" stroke-width="2"/>
-   <circle cx="35" cy="678" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/><circle cx="113" cy="678" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
-   <path d="M3 656h12M130 656h8" stroke="#fff2a8" stroke-width="6"/>
-  </g>
- </g>
- <g id="carB">
-  <g transform="translate(1500 0) scale(-1 1)">
-   <path d="M0 710l22-28 66-8 34 28 18 8v24H0z" fill="#35cfe5" stroke="#d2fbff" stroke-width="2"/>
-   <path d="M36 684l15-20h37l22 20z" fill="#a6ecff" stroke="#fff" stroke-width="2"/>
-   <circle cx="35" cy="738" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/><circle cx="113" cy="738" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
-   <path d="M3 716h12M130 716h8" stroke="#fff2a8" stroke-width="6"/>
-  </g>
- </g>
- </svg>
-</div>
-<canvas id="fireworks"></canvas>
-<main>
- <div class="eyebrow">The countdown to the next chapter</div>
- <h1>Grand Theft<br>Auto VI</h1>
- <div class="subtitle">Vice City is calling</div>
- <section class="panel">
-  <div class="panel-label" id="panelLabel">До выхода осталось</div>
-  <div class="countdown" id="countdown">
-   <div class="unit"><div class="num" id="days">00</div><span>Дней</span></div>
-   <div class="unit"><div class="num" id="hours">00</div><span>Часов</span></div>
-   <div class="unit"><div class="num" id="minutes">00</div><span>Минут</span></div>
-   <div class="unit"><div class="num" id="seconds">00</div><span>Секунд</span></div>
+  <div class="scene" aria-hidden="true">
+    <div class="sun"></div>
+    <img class="city-art" src="city.svg" alt="">
   </div>
-  <div class="launched-message">Welcome to Vice City.<br>GTA VI is out now!</div>
-  <div class="date" id="dateLabel">19 ноября 2026 · 00:00 по местному времени</div>
-  <div class="status"><i class="dot"></i><span id="statusText">Ожидание запуска</span></div>
- </section>
- <div class="footer">A fan-made countdown · Not affiliated with Rockstar Games</div>
-</main>
-<script>
-const launch = new Date(2026,10,19,0,0,0,0);
-const $ = id => document.getElementById(id);
-const pad = n => String(n).padStart(2,'0');
-let launched = false;
-function tick(){
- const diff = launch.getTime()-Date.now();
- if(diff<=0){
-  if(!launched){launched=true;document.body.classList.add('launched');$('panelLabel').textContent='Этот день настал';$('statusText').textContent='GTA VI доступна';$('dateLabel').textContent='19 ноября 2026 · Запуск состоялся';startFireworks();}
-  return;
- }
- const s=Math.floor(diff/1000);
- $('days').textContent=pad(Math.floor(s/86400));
- $('hours').textContent=pad(Math.floor(s%86400/3600));
- $('minutes').textContent=pad(Math.floor(s%3600/60));
- $('seconds').textContent=pad(s%60);
-}
-tick();setInterval(tick,250);
-const carA=document.querySelector('#carA'),carB=document.querySelector('#carB');
-let xA=-260,xB=1500;
-function drive(){xA+=1.8;xB-=1.25;if(xA>1550)xA=-260;if(xB< -260)xB=1500;carA.setAttribute('transform','translate('+xA+' 0)');carB.setAttribute('transform','translate('+(xB-1500)+' 0)');requestAnimationFrame(drive)}drive();
-// Fireworks: lightweight canvas particle simulation, starts only after launch.
-const canvas=$('fireworks'),ctx=canvas.getContext('2d');let W,H,particles=[],last=0;
-function resize(){W=canvas.width=innerWidth*devicePixelRatio;H=canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}addEventListener('resize',resize);resize();
-function burst(){const x=Math.random()*innerWidth,y=Math.random()*innerHeight*.52+innerHeight*.08,hue=Math.random()*360;for(let i=0;i<70;i++){const a=Math.PI*2*i/70+Math.random()*.08,v=1.2+Math.random()*4.2;particles.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,life:65+Math.random()*35,max:100,hue,size:1.2+Math.random()*2.2})}}
-function frame(t){if(!launched)return;if(t-last>650){burst();if(Math.random()>.4)burst();last=t}ctx.clearRect(0,0,innerWidth,innerHeight);particles=particles.filter(p=>p.life>0);for(const p of particles){p.x+=p.vx;p.y+=p.vy;p.vy+=.035;p.vx*=.992;p.life--;ctx.globalAlpha=Math.max(0,p.life/p.max);ctx.fillStyle='hsl('+p.hue+' 100% 70%)';ctx.shadowBlur=12;ctx.shadowColor=ctx.fillStyle;ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1;ctx.shadowBlur=0;requestAnimationFrame(frame)}
-function startFireworks(){burst();burst();requestAnimationFrame(frame)}
-</script>
+
+  <canvas id="fireworks" aria-hidden="true"></canvas>
+
+  <main>
+    <div class="eyebrow">The countdown to the next chapter</div>
+    <h1>Grand Theft<br>Auto VI</h1>
+    <div class="subtitle">Vice City is calling</div>
+
+    <section class="panel" aria-label="Обратный отсчёт до выхода GTA VI">
+      <div class="panel-label" id="panelLabel">До выхода осталось</div>
+
+      <div class="countdown" id="countdown" aria-live="off">
+        <div class="unit">
+          <div class="num" id="days">00</div>
+          <span>Дней</span>
+        </div>
+        <div class="unit">
+          <div class="num" id="hours">00</div>
+          <span>Часов</span>
+        </div>
+        <div class="unit">
+          <div class="num" id="minutes">00</div>
+          <span>Минут</span>
+        </div>
+        <div class="unit">
+          <div class="num" id="seconds">00</div>
+          <span>Секунд</span>
+        </div>
+      </div>
+
+      <div class="launched-message" id="launchedMessage">
+        Welcome to Vice City.<br>GTA VI is out now!
+      </div>
+
+      <div class="date" id="dateLabel">19 ноября 2026 · 00:00 по местному времени</div>
+      <div class="status">
+        <i class="dot"></i>
+        <span id="statusText">Ожидание запуска</span>
+      </div>
+    </section>
+
+    <div class="footer">A fan-made countdown · Not affiliated with Rockstar Games</div>
+  </main>
 </body>
 </html>
