@@ -218,7 +218,7 @@
   <!-- Голубое спортивное купе, движется навстречу -->
   <g>
     <animateTransform attributeName="transform" type="translate" from="2100 0" to="-720 0" dur="30s" repeatCount="indefinite"/>
-    <g transform="translate(0 0) scale(.82 .82)">
+    <g transform="translate(0 160) scale(.82 .82)">
       <ellipse cx="1110" cy="1125" rx="285" ry="28" fill="#49dcff" opacity=".3" filter="url(#shadow)"/>
       <path d="M850 1067L900 1015Q920 994 970 987L1080 970Q1140 940 1220 957L1340 989Q1380 998 1415 1035L1450 1057L1450 1097L1412 1115H870L840 1095Z" fill="url(#carBlue)" stroke="#b9f7ff" stroke-width="5"/>
       <path d="M954 992L1080 965Q1152 941 1220 958L1320 991L1275 1020H918Z" fill="#13253e" stroke="#b1efff" stroke-width="5"/>
