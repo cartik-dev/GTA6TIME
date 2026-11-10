@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1440 760"
+  preserveAspectRatio="xMidYMax slice"
+  role="img"
+  aria-label="Неоновый городской пейзаж Vice City с пальмами и движущимися автомобилями"
+>
+  <defs>
+    <linearGradient id="road" x2="0" y2="1">
+      <stop stop-color="#30243f"/>
+      <stop offset="1" stop-color="#090b1c"/>
+    </linearGradient>
+    <linearGradient id="glass" x2="0" y2="1">
+      <stop stop-color="#342d62"/>
+      <stop offset="1" stop-color="#171a38"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="#292044" opacity=".82">
+    <path d="M0 390h90v-110h40v65h28v-90h45v135h55v-75h40v-50h32v125h65v-150h52v150h44v-80h28v-40h38v120h65v-175h55v175h44v-105h35v105h50v-135h55v135h42v-75h35v-35h45v110h54v-150h50v150h55v-100h42v100h55v-130h44v130h70v370H0z"/>
+  </g>
+
+  <g>
+    <path d="M135 530V280l18-36 18 36v250z" fill="#22264b" stroke="#ff7db9" stroke-width="2"/>
+    <path d="M145 292h16M145 318h16M145 344h16M145 370h16M145 396h16M145 422h16M145 448h16" stroke="#7cecff" stroke-width="4"/>
+
+    <path d="M1030 540V210h105v330z" fill="url(#glass)" stroke="#ff7db9" stroke-width="2"/>
+    <path d="M1044 230h77M1044 260h77M1044 290h77M1044 320h77M1044 350h77M1044 380h77M1044 410h77M1044 440h77M1044 470h77" stroke="#74e9ff" stroke-width="3" opacity=".8"/>
+    <path d="M1020 210h125l-14-20h-97z" fill="#ff68a9"/>
+
+    <path d="M1170 540V320h70v220z" fill="#202344" stroke="#65eaff"/>
+    <path d="M1180 340h50M1180 370h50M1180 400h50M1180 430h50M1180 460h50" stroke="#ff8bbd" stroke-width="4"/>
+  </g>
+
+  <g transform="translate(560 290)">
+    <path d="M0 0h300v86H0z" fill="#1a1734" stroke="#ff69b2" stroke-width="3"/>
+    <text x="150" y="57" text-anchor="middle" font-family="Arial,sans-serif" font-size="42" font-weight="900" letter-spacing="7" fill="#fff" stroke="#ff4fa3" stroke-width="1">VICE CITY</text>
+    <path d="M18 92h264" stroke="#62eaff" stroke-width="3"/>
+  </g>
+
+  <path d="M0 525q250-25 500 0t500 0 440 0v235H0z" fill="#252344" opacity=".8"/>
+  <path d="M0 585q280-18 520 0t480 0 440 0" fill="none" stroke="#ff8ebd" stroke-width="3" opacity=".5"/>
+
+  <path d="M0 625L1440 595v165H0z" fill="url(#road)"/>
+  <path d="M0 690l1440-28" stroke="#ffd36a" stroke-width="3" stroke-dasharray="52 36" opacity=".65"/>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M310 630q-12-150 5-235" stroke="#38243c" stroke-width="13"/>
+    <path d="M315 395q-70-48-116-12 65-6 111 26M315 395q-35-80-92-77 54 26 92 92M315 395q5-90 62-111-35 51-54 119M315 395q65-54 115-25-68-1-109 38M315 395q42 18 58 73-44-40-66-62" stroke="#192c3b" stroke-width="13"/>
+
+    <path d="M1300 640q-8-140 10-220" stroke="#38243c" stroke-width="13"/>
+    <path d="M1310 420q-70-48-116-12 65-6 111 26M1310 420q-35-80-92-77 54 26 92 92M1310 420q5-90 62-111-35 51-54 119M1310 420q65-54 115-25-68-1-109 38M1310 420q42 18 58 73-44-40-66-62" stroke="#192c3b" stroke-width="13"/>
+  </g>
+
+  <!-- Машина движется слева направо -->
+  <g id="carA">
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      from="-260 0"
+      to="1600 0"
+      dur="24s"
+      repeatCount="indefinite"
+    />
+    <g transform="translate(-250 0)">
+      <path d="M0 650l22-28 66-8 34 28 18 8v24H0z" fill="#ff4f9d" stroke="#ffd2e5" stroke-width="2"/>
+      <path d="M36 624l15-20h37l22 20z" fill="#75dff1" stroke="#ffe2ef" stroke-width="2"/>
+      <circle cx="35" cy="678" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
+      <circle cx="113" cy="678" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
+      <path d="M3 656h12M130 656h8" stroke="#fff2a8" stroke-width="6"/>
+    </g>
+  </g>
+
+  <!-- Встречная машина движется справа налево -->
+  <g id="carB">
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      from="0 0"
+      to="-1760 0"
+      dur="29s"
+      repeatCount="indefinite"
+    />
+    <g transform="translate(1500 0) scale(-1 1)">
+      <path d="M0 710l22-28 66-8 34 28 18 8v24H0z" fill="#35cfe5" stroke="#d2fbff" stroke-width="2"/>
+      <path d="M36 684l15-20h37l22 20z" fill="#a6ecff" stroke="#fff" stroke-width="2"/>
+      <circle cx="35" cy="738" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
+      <circle cx="113" cy="738" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
+      <path d="M3 716h12M130 716h8" stroke="#fff2a8" stroke-width="6"/>
+    </g>
+  </g>
+</svg>
