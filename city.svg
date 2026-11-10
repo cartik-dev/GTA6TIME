@@ -1,93 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 1440 760"
-  preserveAspectRatio="xMidYMax slice"
-  role="img"
-  aria-label="Неоновый городской пейзаж Vice City с пальмами и движущимися автомобилями"
->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMax slice">
   <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#171b49"/>
+      <stop offset=".34" stop-color="#56336f"/>
+      <stop offset=".68" stop-color="#e66e83"/>
+      <stop offset="1" stop-color="#ffc07f"/>
+    </linearGradient>
+    <linearGradient id="sea" x2="0" y2="1">
+      <stop stop-color="#38516f"/>
+      <stop offset=".36" stop-color="#25334f"/>
+      <stop offset="1" stop-color="#111a35"/>
+    </linearGradient>
+    <linearGradient id="glassA" x2="1" y2="1">
+      <stop stop-color="#33436d"/>
+      <stop offset=".5" stop-color="#20284d"/>
+      <stop offset="1" stop-color="#111a37"/>
+    </linearGradient>
+    <linearGradient id="glassPink" x2="0" y2="1">
+      <stop stop-color="#75436d"/>
+      <stop offset=".45" stop-color="#352b53"/>
+      <stop offset="1" stop-color="#18213d"/>
+    </linearGradient>
     <linearGradient id="road" x2="0" y2="1">
-      <stop stop-color="#30243f"/>
-      <stop offset="1" stop-color="#090b1c"/>
+      <stop stop-color="#34344f"/>
+      <stop offset=".25" stop-color="#20253f"/>
+      <stop offset="1" stop-color="#0b1022"/>
     </linearGradient>
-    <linearGradient id="glass" x2="0" y2="1">
-      <stop stop-color="#342d62"/>
-      <stop offset="1" stop-color="#171a38"/>
+    <linearGradient id="carPink" x2="0" y2="1">
+      <stop stop-color="#ff9ec9"/>
+      <stop offset=".27" stop-color="#fb4c99"/>
+      <stop offset=".72" stop-color="#a91e69"/>
+      <stop offset="1" stop-color="#451b48"/>
     </linearGradient>
+    <linearGradient id="carBlue" x2="0" y2="1">
+      <stop stop-color="#c4fbff"/>
+      <stop offset=".25" stop-color="#38c7e5"/>
+      <stop offset=".7" stop-color="#16769e"/>
+      <stop offset="1" stop-color="#102c52"/>
+    </linearGradient>
+    <linearGradient id="window" x2="0" y2="1">
+      <stop stop-color="#8deeff" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#3d6c9b" stop-opacity=".42"/>
+    </linearGradient>
+    <linearGradient id="headlight" x2="1" y2="0">
+      <stop stop-color="#fff9ce"/>
+      <stop offset="1" stop-color="#ffb96e" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="windowsCool" width="34" height="38" patternUnits="userSpaceOnUse">
+      <rect x="7" y="7" width="12" height="20" rx="1" fill="#70dff2" opacity=".62"/>
+      <rect x="23" y="7" width="5" height="20" fill="#ff8fbd" opacity=".35"/>
+    </pattern>
+    <pattern id="windowsWarm" width="30" height="35" patternUnits="userSpaceOnUse">
+      <rect x="6" y="7" width="10" height="17" rx="1" fill="#ffd18e" opacity=".7"/>
+      <rect x="20" y="7" width="5" height="17" fill="#ff77b5" opacity=".5"/>
+    </pattern>
+    <filter id="glowPink" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowBlue" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-30%" y="-50%" width="160%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
   </defs>
 
-  <g fill="#292044" opacity=".82">
-    <path d="M0 390h90v-110h40v65h28v-90h45v135h55v-75h40v-50h32v125h65v-150h52v150h44v-80h28v-40h38v120h65v-175h55v175h44v-105h35v105h50v-135h55v135h42v-75h35v-35h45v110h54v-150h50v150h55v-100h42v100h55v-130h44v130h70v370H0z"/>
+  <!-- Небо и дальний горизонт -->
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <path d="M0 435 C240 380 350 410 540 390 S900 410 1080 375 S1440 390 1620 365 S1840 390 1920 370 V640 H0Z" fill="#f18b91" opacity=".16"/>
+  <path d="M0 490 Q240 455 430 478 T850 460 T1280 474 T1650 448 T1920 466" fill="none" stroke="#ffd5b3" stroke-width="3" opacity=".25"/>
+
+  <!-- Мягкие облака на закате -->
+  <g fill="#f9a3aa" opacity=".18">
+    <path d="M100 260q45-42 94-5 40-53 92-10 42-7 56 28H100z"/>
+    <path d="M710 205q55-48 106-4 55-65 120-7 55-6 72 38H710z"/>
+    <path d="M1450 300q52-50 110-8 49-55 104-4 40 0 58 30h-272z"/>
   </g>
 
+  <!-- Город вдали -->
+  <g fill="#282846" opacity=".72">
+    <path d="M0 570V455h58v115h32V420h54v150h36V470h50v100h36V390h52v180h38V445h45v125h40V420h68v150h38V470h50v100h42V400h64v170h40V455h52v115h45V430h55v140h40V470h46v100h44V410h56v160h42V455h58v115h40V420h60v150h48V470h56v100h42V430h61v140h44V455h60v115h52V405h55v165h50V460h55v110h56V430h50v140h48V455h50v115h55V410h58v160h45V470h70v100h50V430h75v140h42V455h58v115h45V420h60v150h60v-115h70v115h55v-80h80v80h45v-120h74v120h72v-95h85v95h60v-125h80v125h65v-85h65v85h75v-130h65v130h70v-90h70v90h90v510H0z"/>
+  </g>
+
+  <!-- Крупные башни и гостиницы -->
   <g>
-    <path d="M135 530V280l18-36 18 36v250z" fill="#22264b" stroke="#ff7db9" stroke-width="2"/>
-    <path d="M145 292h16M145 318h16M145 344h16M145 370h16M145 396h16M145 422h16M145 448h16" stroke="#7cecff" stroke-width="4"/>
+    <path d="M60 665V395l28-42 28 42v270z" fill="url(#glassPink)" stroke="#f77eb6" stroke-width="3"/>
+    <path d="M82 398h12v240H82z" fill="url(#windowsCool)" opacity=".82"/>
+    <path d="M48 398h80" stroke="#ff9bc9" stroke-width="5" filter="url(#glowPink)"/>
 
-    <path d="M1030 540V210h105v330z" fill="url(#glass)" stroke="#ff7db9" stroke-width="2"/>
-    <path d="M1044 230h77M1044 260h77M1044 290h77M1044 320h77M1044 350h77M1044 380h77M1044 410h77M1044 440h77M1044 470h77" stroke="#74e9ff" stroke-width="3" opacity=".8"/>
-    <path d="M1020 210h125l-14-20h-97z" fill="#ff68a9"/>
+    <path d="M195 660V310h130v350z" fill="url(#glassA)" stroke="#6dddf0" stroke-width="3"/>
+    <path d="M207 330h106v313H207z" fill="url(#windowsCool)"/>
+    <path d="M188 310h144l-18-29H208z" fill="#ff83b8"/>
+    <path d="M215 294h100" stroke="#fff0d2" stroke-width="5" opacity=".8"/>
 
-    <path d="M1170 540V320h70v220z" fill="#202344" stroke="#65eaff"/>
-    <path d="M1180 340h50M1180 370h50M1180 400h50M1180 430h50M1180 460h50" stroke="#ff8bbd" stroke-width="4"/>
+    <path d="M365 660V390h112v270z" fill="#282747" stroke="#ff88b8" stroke-width="3"/>
+    <path d="M376 405h90v245h-90z" fill="url(#windowsWarm)"/>
+    <path d="M352 390h138" stroke="#ff6eb1" stroke-width="5" filter="url(#glowPink)"/>
+
+    <path d="M520 660V270h160v390z" fill="url(#glassA)" stroke="#73e7fa" stroke-width="3"/>
+    <path d="M538 290h124v354H538z" fill="url(#windowsCool)"/>
+    <path d="M545 270l25-55h60l25 55z" fill="#25304f" stroke="#ff85bf" stroke-width="3"/>
+    <path d="M580 215v-70h20v70" fill="#2c3455" stroke="#72e7fa" stroke-width="3"/>
+    <path d="M530 325h140M530 485h140" stroke="#ff8ebd" stroke-width="3" opacity=".6"/>
+
+    <path d="M720 660V360h126v300z" fill="url(#glassPink)" stroke="#ff80b8" stroke-width="3"/>
+    <path d="M732 376h102v270H732z" fill="url(#windowsCool)"/>
+    <path d="M705 360h156" stroke="#ffc1d9" stroke-width="5"/>
+
+    <path d="M895 660V220h180v440z" fill="url(#glassA)" stroke="#70e5f5" stroke-width="3"/>
+    <path d="M910 242h150v404H910z" fill="url(#windowsWarm)"/>
+    <path d="M880 220h210l-24-30H904z" fill="#ff80b7"/>
+    <path d="M920 190h140" stroke="#fff1d0" stroke-width="4"/>
+    <path d="M980 190v-66h12v66" fill="#27314e" stroke="#67e5f4" stroke-width="3"/>
+
+    <path d="M1115 660V330h148v330z" fill="url(#glassPink)" stroke="#ff83ba" stroke-width="3"/>
+    <path d="M1128 348h122v298h-122z" fill="url(#windowsCool)"/>
+    <path d="M1098 330h182" stroke="#ffb0ce" stroke-width="5" filter="url(#glowPink)"/>
+
+    <path d="M1300 660V255h170v405z" fill="url(#glassA)" stroke="#75e7f2" stroke-width="3"/>
+    <path d="M1316 275h138v370h-138z" fill="url(#windowsWarm)"/>
+    <path d="M1284 255h202l-25-30h-153z" fill="#ff8bbd"/>
+    <path d="M1340 225h115" stroke="#fff0d4" stroke-width="5"/>
+
+    <path d="M1520 660V380h120v280z" fill="url(#glassPink)" stroke="#ff82b7" stroke-width="3"/>
+    <path d="M1532 395h96v250h-96z" fill="url(#windowsCool)"/>
+
+    <path d="M1685 660V315h150v345z" fill="url(#glassA)" stroke="#6fe4f4" stroke-width="3"/>
+    <path d="M1700 333h120v312h-120z" fill="url(#windowsWarm)"/>
+    <path d="M1672 315h176" stroke="#ff8fbd" stroke-width="5"/>
   </g>
 
-  <g transform="translate(560 290)">
-    <path d="M0 0h300v86H0z" fill="#1a1734" stroke="#ff69b2" stroke-width="3"/>
-    <text x="150" y="57" text-anchor="middle" font-family="Arial,sans-serif" font-size="42" font-weight="900" letter-spacing="7" fill="#fff" stroke="#ff4fa3" stroke-width="1">VICE CITY</text>
-    <path d="M18 92h264" stroke="#62eaff" stroke-width="3"/>
+  <!-- Неоновые вывески и рекламные щиты -->
+  <g filter="url(#glowPink)">
+    <path d="M380 470h150v62H380z" fill="#241b3d" stroke="#ff6eae" stroke-width="3"/>
+    <text x="455" y="510" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="900" letter-spacing="4" fill="#fff4fa">HOTEL</text>
+    <path d="M1140 425h145v60h-145z" fill="#201d3c" stroke="#ff6eae" stroke-width="3"/>
+    <text x="1212" y="465" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="900" letter-spacing="3" fill="#fff">OCEAN</text>
+  </g>
+  <g filter="url(#glowBlue)">
+    <path d="M695 545h170v66H695z" fill="#1a2440" stroke="#5de9ff" stroke-width="3"/>
+    <text x="780" y="590" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="900" letter-spacing="5" fill="#eaffff">VICE</text>
   </g>
 
-  <path d="M0 525q250-25 500 0t500 0 440 0v235H0z" fill="#252344" opacity=".8"/>
-  <path d="M0 585q280-18 520 0t480 0 440 0" fill="none" stroke="#ff8ebd" stroke-width="3" opacity=".5"/>
+  <!-- Вода и цветные отражения -->
+  <path d="M0 630 Q260 610 510 630 T1010 628 T1510 620 T1920 625 V805 H0Z" fill="url(#sea)"/>
+  <g opacity=".52">
+    <path d="M110 658h260M155 675h190M510 650h175M540 670h130M930 650h260M975 671h210M1330 653h225M1370 677h180M1640 650h200M1685 671h165" stroke="#f18bb5" stroke-width="4"/>
+    <path d="M40 705h390M470 700h180M740 710h260M1060 697h220M1330 710h350" stroke="#5ce3f4" stroke-width="3" opacity=".65"/>
+    <path d="M245 735h170M610 740h320M1070 735h180M1460 740h250" stroke="#ffb77d" stroke-width="5" opacity=".65"/>
+  </g>
+  <path d="M0 628 Q260 608 510 628 T1010 626 T1510 618 T1920 623" fill="none" stroke="#ffb4c9" stroke-width="4" opacity=".8"/>
 
-  <path d="M0 625L1440 595v165H0z" fill="url(#road)"/>
-  <path d="M0 690l1440-28" stroke="#ffd36a" stroke-width="3" stroke-dasharray="52 36" opacity=".65"/>
-
-  <g fill="none" stroke-linecap="round">
-    <path d="M310 630q-12-150 5-235" stroke="#38243c" stroke-width="13"/>
-    <path d="M315 395q-70-48-116-12 65-6 111 26M315 395q-35-80-92-77 54 26 92 92M315 395q5-90 62-111-35 51-54 119M315 395q65-54 115-25-68-1-109 38M315 395q42 18 58 73-44-40-66-62" stroke="#192c3b" stroke-width="13"/>
-
-    <path d="M1300 640q-8-140 10-220" stroke="#38243c" stroke-width="13"/>
-    <path d="M1310 420q-70-48-116-12 65-6 111 26M1310 420q-35-80-92-77 54 26 92 92M1310 420q5-90 62-111-35 51-54 119M1310 420q65-54 115-25-68-1-109 38M1310 420q42 18 58 73-44-40-66-62" stroke="#192c3b" stroke-width="13"/>
+  <!-- Пальмы на переднем плане -->
+  <g stroke-linecap="round">
+    <path d="M135 820Q165 630 135 400" fill="none" stroke="#36223e" stroke-width="24"/>
+    <path d="M135 405Q42 320 10 370Q77 351 137 426M135 405Q66 270 24 285Q91 333 147 431M135 405Q145 270 245 260Q179 320 144 435M135 405Q238 320 300 365Q212 355 140 433M135 405Q245 420 275 495Q204 444 133 430M135 405Q48 430 20 500Q77 448 137 430" fill="none" stroke="#183346" stroke-width="22"/>
+    <path d="M1785 820Q1750 630 1785 390" fill="none" stroke="#36223e" stroke-width="24"/>
+    <path d="M1785 395Q1680 310 1640 360Q1720 342 1788 416M1785 395Q1715 260 1670 275Q1745 323 1795 420M1785 395Q1790 260 1890 250Q1820 310 1792 425M1785 395Q1885 310 1920 350Q1850 346 1788 422M1785 395Q1885 420 1915 495Q1840 444 1783 425M1785 395Q1698 420 1670 495Q1740 448 1790 425" fill="none" stroke="#183346" stroke-width="22"/>
   </g>
 
-  <!-- Машина движется слева направо -->
-  <g id="carA">
-    <animateTransform
-      attributeName="transform"
-      type="translate"
-      from="-260 0"
-      to="1600 0"
-      dur="24s"
-      repeatCount="indefinite"
-    />
-    <g transform="translate(-250 0)">
-      <path d="M0 650l22-28 66-8 34 28 18 8v24H0z" fill="#ff4f9d" stroke="#ffd2e5" stroke-width="2"/>
-      <path d="M36 624l15-20h37l22 20z" fill="#75dff1" stroke="#ffe2ef" stroke-width="2"/>
-      <circle cx="35" cy="678" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
-      <circle cx="113" cy="678" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
-      <path d="M3 656h12M130 656h8" stroke="#fff2a8" stroke-width="6"/>
+  <!-- Набережная и огни -->
+  <path d="M0 765L1920 745" stroke="#ff8fba" stroke-width="8" opacity=".7"/>
+  <path d="M0 780L1920 760" stroke="#75eaff" stroke-width="3" opacity=".45"/>
+  <g fill="#ffe2a4" filter="url(#glowPink)">
+    <circle cx="250" cy="756" r="5"/><circle cx="520" cy="753" r="5"/>
+    <circle cx="805" cy="750" r="5"/><circle cx="1100" cy="747" r="5"/>
+    <circle cx="1410" cy="744" r="5"/><circle cx="1690" cy="742" r="5"/>
+  </g>
+
+  <!-- Широкая ночная дорога с перспективой -->
+  <path d="M0 805L1920 785V1080H0Z" fill="url(#road)"/>
+  <path d="M0 805L1920 785" stroke="#ff72b1" stroke-width="8" opacity=".82" filter="url(#glowPink)"/>
+  <path d="M0 825L1920 805" stroke="#77eaff" stroke-width="3" opacity=".65"/>
+  <path d="M0 978L1920 960" stroke="#f4b65f" stroke-width="4" stroke-dasharray="90 75" opacity=".8"/>
+  <path d="M0 1062L1920 1044" stroke="#3c4665" stroke-width="4" opacity=".8"/>
+  <g opacity=".24" stroke="#b7d6f7" stroke-width="2">
+    <path d="M250 1080L740 800M650 1080L900 800M1120 1080L1080 800M1600 1080L1200 800"/>
+  </g>
+
+  <!-- Отражения фар и неона на асфальте -->
+  <path d="M250 885l180 58-210-32zM1300 980l250 58-300-24z" fill="#ff70aa" opacity=".13" filter="url(#shadow)"/>
+  <path d="M930 880l240 36-270 4z" fill="#5cecff" opacity=".14" filter="url(#shadow)"/>
+
+  <!-- Спортивное купе: розовая машина, едет слева направо -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" from="-570 0" to="2200 0" dur="25s" repeatCount="indefinite"/>
+    <g transform="translate(0 0)">
+      <ellipse cx="540" cy="935" rx="270" ry="28" fill="#ff4eaa" opacity=".34" filter="url(#shadow)"/>
+      <path d="M280 879L330 824Q350 802 397 796L505 785Q560 760 640 772L760 800Q800 808 835 850L870 869L876 909L837 925H300L270 907Z" fill="url(#carPink)" stroke="#ffc0dc" stroke-width="5"/>
+      <path d="M384 802L505 780Q558 757 634 773L737 804L690 834H350Z" fill="#14283f" stroke="#ffb2d4" stroke-width="5"/>
+      <path d="M513 783L500 833H699L735 805L634 773Q558 759 513 783Z" fill="url(#window)" opacity=".75"/>
+      <path d="M506 783L496 832" stroke="#ff9fc9" stroke-width="5"/>
+      <path d="M342 842Q465 851 560 844T790 848" fill="none" stroke="#ffb6d4" stroke-width="4" opacity=".85"/>
+      <path d="M294 875L365 869L343 888H278Z" fill="#fff2d0" filter="url(#glowPink)"/>
+      <path d="M815 867l47 8-4 18-53-3z" fill="#ff254e" filter="url(#glowPink)"/>
+      <path d="M320 907H842" stroke="#ff8ec0" stroke-width="5" opacity=".85"/>
+      <path d="M355 921h470" stroke="#57eaff" stroke-width="5" opacity=".75" filter="url(#glowBlue)"/>
+      <path d="M445 867l-25 36h75l18-36z" fill="#522044" opacity=".72"/>
+      <path d="M445 867l-25 36M513 867l-18 36" stroke="#f8c1d9" stroke-width="3" opacity=".6"/>
+      <g>
+        <circle cx="405" cy="914" r="47" fill="#0b1020" stroke="#a8b6cc" stroke-width="9"/>
+        <circle cx="405" cy="914" r="28" fill="#27344d" stroke="#d5e8f5" stroke-width="5"/>
+        <circle cx="405" cy="914" r="8" fill="#ff9bc9"/>
+        <path d="M405 887v54M378 914h54M386 895l38 38M424 895l-38 38" stroke="#b5c9db" stroke-width="4"/>
+        <circle cx="755" cy="914" r="47" fill="#0b1020" stroke="#a8b6cc" stroke-width="9"/>
+        <circle cx="755" cy="914" r="28" fill="#27344d" stroke="#d5e8f5" stroke-width="5"/>
+        <circle cx="755" cy="914" r="8" fill="#ff9bc9"/>
+        <path d="M755 887v54M728 914h54M736 895l38 38M774 895l-38 38" stroke="#b5c9db" stroke-width="4"/>
+      </g>
+      <path d="M290 897l-18 8 6 15h31M860 891l18 5-6 19h-31" fill="none" stroke="#14172d" stroke-width="8"/>
     </g>
   </g>
 
-  <!-- Встречная машина движется справа налево -->
-  <g id="carB">
-    <animateTransform
-      attributeName="transform"
-      type="translate"
-      from="0 0"
-      to="-1760 0"
-      dur="29s"
-      repeatCount="indefinite"
-    />
-    <g transform="translate(1500 0) scale(-1 1)">
-      <path d="M0 710l22-28 66-8 34 28 18 8v24H0z" fill="#35cfe5" stroke="#d2fbff" stroke-width="2"/>
-      <path d="M36 684l15-20h37l22 20z" fill="#a6ecff" stroke="#fff" stroke-width="2"/>
-      <circle cx="35" cy="738" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
-      <circle cx="113" cy="738" r="13" fill="#111322" stroke="#9ba7c9" stroke-width="5"/>
-      <path d="M3 716h12M130 716h8" stroke="#fff2a8" stroke-width="6"/>
+  <!-- Голубое спортивное купе, движется навстречу -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" from="2100 0" to="-720 0" dur="30s" repeatCount="indefinite"/>
+    <g transform="translate(0 0) scale(.82 .82)">
+      <ellipse cx="1110" cy="1125" rx="285" ry="28" fill="#49dcff" opacity=".3" filter="url(#shadow)"/>
+      <path d="M850 1067L900 1015Q920 994 970 987L1080 970Q1140 940 1220 957L1340 989Q1380 998 1415 1035L1450 1057L1450 1097L1412 1115H870L840 1095Z" fill="url(#carBlue)" stroke="#b9f7ff" stroke-width="5"/>
+      <path d="M954 992L1080 965Q1152 941 1220 958L1320 991L1275 1020H918Z" fill="#13253e" stroke="#b1efff" stroke-width="5"/>
+      <path d="M1085 967Q1152 944 1218 959L1318 991L1275 1018H1070Z" fill="url(#window)" opacity=".82"/>
+      <path d="M1080 968L1065 1018" stroke="#8fefff" stroke-width="5"/>
+      <path d="M875 1055l80-7-20 23h-74z" fill="#fff8d4" filter="url(#glowBlue)"/>
+      <path d="M1405 1050l34 7-2 17-47-2z" fill="#ff315f" filter="url(#glowPink)"/>
+      <path d="M900 1097h520" stroke="#9df5ff" stroke-width="5"/>
+      <path d="M930 1110h455" stroke="#ff8ad0" stroke-width="5" opacity=".8" filter="url(#glowPink)"/>
+      <path d="M1020 1039l-25 39h75l18-39z" fill="#18314d" opacity=".8"/>
+      <g>
+        <circle cx="985" cy="1100" r="48" fill="#090f20" stroke="#b4c8d7" stroke-width="9"/>
+        <circle cx="985" cy="1100" r="29" fill="#263a53" stroke="#e0f9ff" stroke-width="5"/>
+        <circle cx="985" cy="1100" r="8" fill="#58eaff"/>
+        <path d="M985 1073v54M958 1100h54M966 1080l38 40M1004 1080l-38 40" stroke="#c5e8ef" stroke-width="4"/>
+        <circle cx="1360" cy="1100" r="48" fill="#090f20" stroke="#b4c8d7" stroke-width="9"/>
+        <circle cx="1360" cy="1100" r="29" fill="#263a53" stroke="#e0f9ff" stroke-width="5"/>
+        <circle cx="1360" cy="1100" r="8" fill="#58eaff"/>
+        <path d="M1360 1073v54M1333 1100h54M1341 1080l38 40M1379 1080l-38 40" stroke="#c5e8ef" stroke-width="4"/>
+      </g>
     </g>
   </g>
 </svg>
